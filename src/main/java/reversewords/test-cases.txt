@@ -1,0 +1,162 @@
+Reverse words within sentences
+--------------------------------------------------------------------------------
+
+1 letter, 1 word, 1 line:
+input:
+1
+a
+output:
+a
+
+2 letter, 2 word, 2 line:
+input:
+2
+ab cd
+ef gh
+output:
+ba dc
+fe hg
+
+3 letter, 3 word, 3 line
+input:
+3
+rat mop dog
+top hat cat
+sun day saw
+output:
+tar pom god
+pot tah tac
+nus yad was
+
+variable letter, variable word, 3 line:
+input:
+3
+RemoteIo is awesome
+Candidates pass interview
+best candidates are selected
+output:
+oIetomeR si emosewa
+setadidnaC ssap weivretni
+tseb setadidnac era detceles
+
+N = 1, lines = 1, words = 100
+input:
+<file: 001-lines-100-words-input.txt>
+output:
+<file: 001-lines-100-words-output.txt>
+
+N = 1, lines = 1, words = 101
+input:
+<file: 001-lines-101-words-input.txt>
+output:
+IllegalArgumentException
+
+N = 100, lines = 100, words = 100
+input:
+<file: 100-lines-100-words-input.txt>
+output:
+<file: 100-lines-100-words-output.txt>
+
+N = 100, lines = 101, words = 101
+input:
+<file: 101-lines-101-words-input.txt>
+output:
+IllegalArgumentException
+
+N = 101:
+input:
+101
+output:
+IllegalArgumentException
+
+N is less than number of actual lines:
+input:
+1
+White hat
+Red glover
+output:
+IllegalArgumentException
+
+N is greater than number of actual lines:
+input:
+2
+Yellow sun
+output:
+IllegalArgumentException
+
+N is not a valid number:
+input:
+brown
+dog
+output:
+IllegalArgumentException
+
+word with ASCII character not in English alphabet:
+input:
+1
+Is the dogs hair red?
+output:
+IllegalArgumentException
+
+word with Extended ASCII character not in English alphabet:
+input:
+1
+The boß will see you now
+output:
+IllegalArgumentException
+
+words separated by 2 spaces:
+input:
+1
+cats  and  dogs
+output:
+IllegalArgumentException
+
+10 letter word:
+input
+1
+See the jackhammer over there
+output:
+eeS eht remmahkcaj revo ereht
+
+11 letter word:
+input
+1
+The lumberjacks are larger
+
+input is empty/null:
+input:
+<no input>
+output:
+IllegalArgumentException
+
+N = 1 with no new line:
+input:
+1
+output:
+IllegalArgumentException
+
+N = 1, lines are empty/null:
+input:
+1
+
+output:
+IllegalArgumentException
+
+input contains an empty line:
+3
+The ball
+
+rolls down the hill
+
+extra space at front:
+1
+ c d
+
+extra space in middle:
+1
+c  d
+
+extra space at end:
+1
+c d

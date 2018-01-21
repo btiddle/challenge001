@@ -1,0 +1,78 @@
+Test Cases for FibonacciLike
+-------------------------------------------------------------------------------
+
+a1 = 1, a2 = 2, n = 3:
+1 2 3
+3
+
+a1 = 4, a2 = 2, n = 3:
+4 2 3
+6
+
+a1 = 4, a2 = 2, n = 4:
+4 2 4
+8
+
+a1 = 4, a2 = 2, n = 5:
+4 2 5
+14
+
+a1 = 4, a2 = 2, n = 6:
+4 2 6
+22
+
+a1 = 4, a2 = 2, n = 7:
+4 2 7
+36
+
+a1 = 4, a2 = 2, n = 8:
+4 2 8
+58
+
+a1 = 4, a2 = 2, n = 9:
+4 2 9
+94
+
+a1 = 4, a2 = 2, n = 10:
+4 2 10
+IllegalArgumentException
+
+a1 = 10:
+10 2 4
+IllegalArgumentException
+
+a2 = 1000:
+4 1000 4
+IllegalArgumentException
+
+n = 0:
+0 1 3
+IllegalArgumentException
+
+n = 1:
+1 2 1
+IllegalArgumentException
+
+n = 2:
+1 2 2
+IllegalArgumentException
+
+to many parameters:
+1 2 3 4
+IllegalArgumentException
+
+no enough parameters:
+1 2
+IllegalArgumentException
+
+a1 not a number:
+S 1 3
+IllegalArgumentException
+
+a2 not a number:
+4 U 3
+IllegalArgumentException
+
+n not a number:
+4 2 R
+IllegalArgumentException
