@@ -10,7 +10,7 @@ journal/
 *.log
 
 # intellij idea files
-**/.idea/
+.idea/
 *.iml
 *.sc
 
