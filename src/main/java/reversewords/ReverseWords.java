@@ -114,7 +114,7 @@ class ReverseWords {
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            throw new IllegalArgumentException(/* usage() */);
+            throw new IllegalArgumentException(usage());
         }
     }
 }
