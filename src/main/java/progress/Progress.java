@@ -4,15 +4,12 @@ package progress;
 
 import java.io.*;
 import java.util.HashMap;
-import java.util.HashSet;
 
 class Progress {
 
-    private int percentage;
-
-    private String usage =
+    private static String usage =
         "\n" +
-                "usage: Progress str1str2\n" +
+        "Usage: Progress str1str2\n" +
         "Options: \n" +
         " str1      A string filled with same one character,\n" +
         "           where length is % complete, 1 <= length <= 9\n" +
@@ -21,11 +18,26 @@ class Progress {
         " ste1ste2  Total size of str1str2 is between 2 and 10 characters,\n" +
         "           and contains no spaces";
 
-    private void getInput() throws Exception {
+    private static boolean stringIsEmpty(String line) {
+        return (line == null || line.isEmpty());
+    }
+
+    private static boolean stringToLong(String input) {
+        return (input.length() > 10);
+    }
+
+    private static String getInput() throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String input = br.readLine();
+        br.close();
+        return input;
+    }
 
-        if (input == null || input.isEmpty() || input.length() > 10)
+    public static int percentDone(String input) {
+        if (stringIsEmpty(input) )
+            throw new IllegalArgumentException();
+
+        if (stringToLong(input) )
             throw new IllegalArgumentException();
 
         HashMap<Character, Integer> hm = new HashMap<>();
@@ -60,18 +72,16 @@ class Progress {
             throw new IllegalArgumentException();
 
         float value = (float) hm.get(char1) / (float) len;
-        percentage = (int) (value * 100.0f);
+        return (int) (value * 100.0f);
     }
 
     public static void main(String[] args) throws java.lang.Exception {
-        Progress data = new Progress();
-
         try {
-            data.getInput();
+            String input = getInput();
+            System.out.println(percentDone(input));
         } catch (Exception e) {
-            throw new IllegalArgumentException(data.usage);
+            System.out.println("ERROR: Input parameters are not valid.");
+            throw new IllegalArgumentException(usage);
         }
-
-        System.out.println(data.percentage);
     }
 }
